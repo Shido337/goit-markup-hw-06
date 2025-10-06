@@ -170,10 +170,12 @@
       padding: 72px 16px;
       transition: left 0.3s ease;
       z-index: 1000;
+      pointer-events: none;
     }
 
     .burger-menu.is-open {
       opacity: 1;
+      pointer-events: auto;
     }
 
     .burger-modal-close-btn {
@@ -200,92 +202,97 @@
       flex-direction: column;
       margin-bottom: 168px;
     }
-  }
-  .burger-nav-link {
-    font-family: var(--font-family);
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.11111;
-    letter-spacing: 0.02em;
-    color: var(--navy-blue);
-    display: block;
-    position: relative;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
+    .burger-nav-link {
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 1.11111;
+      letter-spacing: 0.02em;
+      color: var(--navy-blue);
+      display: block;
+      position: relative;
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-  .burger-nav-link:hover,
-  .burger-nav-link:focus {
-    color: var(--ocean);
-  }
+    .burger-nav-item:first-child .burger-nav-link {
+      color: var(--ocean);
+    }
 
-  .burger-address {
-    display: flex;
-    margin-bottom: 48px;
-  }
+    .burger-nav-link:hover,
+    .burger-nav-link:focus {
+      color: var(--ocean);
+    }
 
-  .burger-contact-list {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 24px;
-  }
+    .burger-address {
+      display: flex;
+      margin-bottom: 48px;
+    }
 
-  .burger-contact-link:hover,
-  .burger-contact-link:focus {
-    color: var(--ocean);
-  }
+    .burger-contact-list {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .burger-contact:first-child .burger-contact-link {
+      color: var(--ocean);
+    }
+    .burger-contact-link:hover,
+    .burger-contact-link:focus {
+      color: var(--ocean);
+    }
 
-  .burger-contact {
-    display: flex;
-    align-items: center;
-  }
+    .burger-contact {
+      display: flex;
+      align-items: center;
+    }
 
-  .burger-contact-link {
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-    color: var(--slate);
-    text-decoration: none;
-    font-style: normal;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
+    .burger-contact-link {
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+      color: var(--slate);
+      text-decoration: none;
+      font-style: normal;
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-  .menu-social {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 40px;
-  }
+    .menu-social {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 40px;
+    }
 
-  .menu-social .menu-icon-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: var(--iris);
-    border-radius: 50%;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
+    .menu-social .menu-icon-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: var(--iris);
+      border-radius: 50%;
+      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-  .footer-social .icon-link:hover,
-  .footer-social .icon-link:focus {
-    background-color: var(--ocean);
+    .footer-social .icon-link:hover,
+    .footer-social .icon-link:focus {
+      background-color: var(--ocean);
+    }
   }
 }
 /* hero */
 .hero {
   background: var(--navy-blue);
   background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/mobile-hero.jpg);
-  max-width: 320px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   padding-top: 72px;
   padding-bottom: 72px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 @media screen and (min-resolution: 192dpi) and (max-width: 767px) {
@@ -370,8 +377,8 @@
 
 .team-section {
   background: var(--cloud);
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 .team-title {
@@ -541,6 +548,32 @@
   }
 }
 
+@media screen and (min-resolution: 192dpi) and (max-width: 767px) {
+  .portfolio-item:nth-child(1) .portfolio-img {
+    background-image: url('../images/porfolio/mobile-banking@2x.jpg');
+  }
+
+  .portfolio-item:nth-child(2) .portfolio-img {
+    background-image: url('../images/porfolio/mobile-payment@2x.jpg');
+  }
+
+  .portfolio-item:nth-child(3) .portfolio-img {
+    background-image: url('../images/porfolio/mobile-meditation@2x.jpg');
+  }
+
+  .portfolio-item:nth-child(4) .portfolio-img {
+    background-image: url('../images/porfolio/mobile-taxi@2x.jpg');
+  }
+
+  .portfolio-item:nth-child(5) .portfolio-img {
+    background-image: url('../images/porfolio/mobile-ilustrations@2x.jpg');
+  }
+
+  .portfolio-item:nth-child(6) .portfolio-img {
+    background-image: url('../images/porfolio/mobile-courses@2x.jpg');
+  }
+}
+
 .portfolio-img {
   position: relative;
   overflow: hidden;
@@ -687,7 +720,6 @@
   color: #fff;
   padding-left: 16px;
   border-radius: 4px;
-  width: 264px;
   height: 40px;
   gap: 24px;
 }
@@ -731,6 +763,18 @@
 
 .sub-icon {
   margin-left: 16px;
+}
+
+@media screen and (max-width: 767px) {
+  .footer-email {
+    width: 100%;
+  }
+  .sub-lable {
+    width: 100%;
+  }
+  .sub-input {
+    width: 100%;
+  }
 }
 
 /* backdrop */
@@ -993,9 +1037,6 @@
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
-    padding-right: 16px;
-    padding-left: 16px;
-    margin: 0 auto;
   }
 
   .header {
@@ -1003,11 +1044,6 @@
     border-bottom: 1px solid var(--cornflower);
     box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16),
       0 2px 1px 0 rgba(46, 47, 66, 0.08);
-  }
-
-  .header.container {
-    display: flex;
-    align-items: center;
   }
 
   .logo-header {
@@ -1150,13 +1186,12 @@
   .hero {
     background: var(--navy-blue);
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/tablet-hero.jpg);
-    max-width: 768px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     padding-top: 112px;
     padding-bottom: 112px;
-    margin: auto;
+    margin: 0 auto;
   }
 
   @media screen and (min-resolution: 192dpi) and (min-width: 768px) {
@@ -1244,12 +1279,6 @@
   }
 
   /* team */
-
-  .team-section {
-    background: var(--cloud);
-    padding-top: 120px;
-    padding-bottom: 120px;
-  }
 
   .team-title {
     font-weight: 700;
@@ -1396,7 +1425,7 @@
     transform: translateY(0);
   }
 
-  @media screen and (max-width: 1157px) {
+  @media screen and (min-width: 768px) {
     .portfolio-item:nth-child(1) .portfolio-img {
       background-image: url('../images/porfolio/banking-app.jpg');
     }
@@ -1419,6 +1448,32 @@
 
     .portfolio-item:nth-child(6) .portfolio-img {
       background-image: url('../images/porfolio/online-courses.jpg');
+    }
+  }
+
+  @media screen and (min-resolution: 192dpi) and (min-width: 768px) {
+    .portfolio-item:nth-child(1) .portfolio-img {
+      background-image: url('../images/porfolio/banking-app@2x.jpg');
+    }
+
+    .portfolio-item:nth-child(2) .portfolio-img {
+      background-image: url('../images/porfolio/cashless-payment@2x.jpg');
+    }
+
+    .portfolio-item:nth-child(3) .portfolio-img {
+      background-image: url('../images/porfolio/meditation-app@2x.jpg');
+    }
+
+    .portfolio-item:nth-child(4) .portfolio-img {
+      background-image: url('../images/porfolio/taxi-service@2x.jpg');
+    }
+
+    .portfolio-item:nth-child(5) .portfolio-img {
+      background-image: url('../images/porfolio/screen-illustrations@2x.jpg');
+    }
+
+    .portfolio-item:nth-child(6) .portfolio-img {
+      background-image: url('../images/porfolio/online-courses@2x.jpg');
     }
   }
 
@@ -1462,8 +1517,8 @@
 
   .footer {
     background: var(--navy-blue);
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 96px;
+    padding-bottom: 96px;
   }
 
   .footer .container {
@@ -1472,6 +1527,7 @@
     margin: 0 auto;
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 0 108px;
   }
 
   .logo-footer {
@@ -1509,8 +1565,6 @@
   .footer-left {
     width: 264px;
     margin-right: 24px;
-    margin-left: 92px;
-    margin-bottom: 72px;
   }
 
   .footer-right {
@@ -1549,10 +1603,6 @@
   .footer-social .icon-link:hover,
   .footer-social .icon-link:focus {
     background-color: var(--green);
-  }
-
-  .footer-email {
-    margin-left: 92px;
   }
 
   .sub-input {
@@ -1872,7 +1922,6 @@
     max-width: 1158px;
     padding-left: 15px;
     padding-right: 15px;
-    margin: auto;
   }
 
   .header {
@@ -1884,7 +1933,9 @@
   .header .container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
+
   .nav {
     align-items: center;
     display: flex;
@@ -1917,7 +1968,7 @@
     display: flex;
     gap: 40px;
     align-items: center;
-    margin-right: 332px;
+    margin: 0;
   }
 
   .nav-link:hover,
@@ -2030,6 +2081,13 @@
     padding-top: 188px;
     padding-bottom: 188px;
     margin: auto;
+  }
+
+  @media screen and (min-resolution: 192dpi) and (min-width: 1158px) {
+    .hero {
+      background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+        url(../images/hero/hero-bg@2x.jpg);
+    }
   }
 
   .hero-title {
@@ -2266,32 +2324,6 @@
     transform: translateY(0);
   }
 
-  @media screen and (min-width: 1158px) {
-    .portfolio-item:nth-child(1) .portfolio-img {
-      background-image: url('../images/porfolio/banking-app.jpg');
-    }
-
-    .portfolio-item:nth-child(2) .portfolio-img {
-      background-image: url('../images/porfolio/cashless-payment.jpg');
-    }
-
-    .portfolio-item:nth-child(3) .portfolio-img {
-      background-image: url('../images/porfolio/meditation-app.jpg');
-    }
-
-    .portfolio-item:nth-child(4) .portfolio-img {
-      background-image: url('../images/porfolio/taxi-service.jpg');
-    }
-
-    .portfolio-item:nth-child(5) .portfolio-img {
-      background-image: url('../images/porfolio/screen-illustrations.jpg');
-    }
-
-    .portfolio-item:nth-child(6) .portfolio-img {
-      background-image: url('../images/porfolio/online-courses.jpg');
-    }
-  }
-
   .portfolio-img {
     position: relative;
     overflow: hidden;
@@ -2341,6 +2373,7 @@
     justify-content: flex-start;
     align-items: baseline;
     margin: 0 auto;
+    padding: 0;
   }
 
   .logo-footer {
@@ -2379,6 +2412,7 @@
     max-width: 264px;
     margin-right: 120px;
     margin-left: auto;
+    margin-bottom: 0;
   }
 
   .footer-right {
@@ -2386,6 +2420,7 @@
     flex-direction: column;
     align-items: flex-start;
     margin-right: 80px;
+    margin-bottom: 0;
   }
 
   .footer-social {
